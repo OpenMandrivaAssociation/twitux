@@ -1,5 +1,5 @@
 Name:           twitux
-Version:        0.62
+Version:        0.69
 Release:        %mkrel 1
 Summary:        Twitux is a Twitter client for the Gnome desktop
 Group:          Networking/Instant messaging
@@ -8,16 +8,18 @@ URL:            http://sourceforge.net/projects/twitux/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	gnome-keyring-devel
-BuildRequires:	dbus-glib-devel
+BuildRequires:	dbus-glib-devel >= 0.61
 BuildRequires:	libsexy-devel
 BuildRequires:	libGConf2-devel
 BuildRequires:	libsoup-devel >= 2.3.4
 BuildRequires:	libnotify-devel
 BuildRequires:	glib2-devel >= 2.15.5
-BuildRequires:	aspell-devel
+BuildRequires:	enchant-devel
+BuildRequires:	libcanberra-devel >= 0.4
 BuildRequires:  gettext
 BuildRequires:	perl-XML-Parser
-BuildRequires:	desktop-file-utils
+BuildRequires:	gnome-doc-utils >= 0.3.2
+BuildRequires:	intltool >= 0.35.0
 
 %description
 Twitux is a Twitter client for the Gnome desktop.
@@ -33,7 +35,7 @@ Twitux is a Twitter client for the Gnome desktop.
 rm -rf %buildroot
 %makeinstall_std
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf %buildroot
@@ -46,6 +48,7 @@ rm -rf %buildroot
 %doc AUTHORS COPYING ChangeLog README TODO
 %{_bindir}/%{name}
 %{_datadir}/%{name}/
+%{_datadir}/omf/%name/twitux-C.omf
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/apps/twitux.*
 %{_sysconfdir}/gconf/schemas/%{name}.schemas
