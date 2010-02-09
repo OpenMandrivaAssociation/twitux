@@ -7,7 +7,7 @@ License:        GPLv2+
 URL:            http://sourceforge.net/projects/twitux/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires:	gnome-keyring-devel
+BuildRequires:	libgnome-keyring-devel
 BuildRequires:	dbus-glib-devel >= 0.61
 BuildRequires:	libsexy-devel
 BuildRequires:	libGConf2-devel
