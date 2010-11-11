@@ -15,7 +15,7 @@ BuildRequires:	libsoup-devel >= 2.3.4
 BuildRequires:	libnotify-devel
 BuildRequires:	glib2-devel >= 2.15.5
 BuildRequires:	enchant-devel
-BuildRequires:	libcanberra-devel >= 0.4
+BuildRequires:	libcanberra-gtk-devel >= 0.4
 BuildRequires:  gettext
 BuildRequires:	perl-XML-Parser
 BuildRequires:	gnome-doc-utils >= 0.3.2
