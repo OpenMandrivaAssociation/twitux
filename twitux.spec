@@ -1,6 +1,6 @@
 Name:           twitux
 Version:        0.69
-Release:        %mkrel 3
+Release:        %mkrel 4
 Summary:        Twitter client for the Gnome desktop
 Group:          Networking/Instant messaging
 License:        GPLv2+
