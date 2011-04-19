@@ -1,11 +1,12 @@
 Name:           twitux
 Version:        0.69
-Release:        %mkrel 4
+Release:        %mkrel 5
 Summary:        Twitter client for the Gnome desktop
 Group:          Networking/Instant messaging
 License:        GPLv2+
 URL:            http://sourceforge.net/projects/twitux/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Patch0:		twitux-0.69-libnotify-0.7.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	libgnome-keyring-devel
 BuildRequires:	dbus-glib-devel >= 0.61
@@ -26,6 +27,7 @@ Twitux is a Twitter client for the Gnome desktop.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x --disable-schemas-install
