@@ -4,7 +4,7 @@ Release:        7
 Summary:        Twitter client for the Gnome desktop
 Group:          Networking/Instant messaging
 License:        GPLv2+
-URL:            http://sourceforge.net/projects/twitux/
+URL:            https://sourceforge.net/projects/twitux/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		twitux-0.69-libnotify-0.7.patch
 BuildRequires:	libgnome-keyring-devel
