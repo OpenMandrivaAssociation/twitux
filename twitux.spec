@@ -7,6 +7,11 @@ License:        GPLv2+
 URL:            https://sourceforge.net/projects/twitux/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		twitux-0.69-libnotify-0.7.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libgnome-keyring-devel
 BuildRequires:	pkgconfig(dbus-glib-1) >= 0.61
 BuildRequires:	libsexy-devel
