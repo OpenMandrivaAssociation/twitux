@@ -32,7 +32,7 @@ Twitux is a Twitter client for the Gnome desktop.
 
 %prep
 %setup -q
-%patch0 -p0
+%patch 0 -p0
 
 %build
 %configure2_5x --disable-schemas-install
