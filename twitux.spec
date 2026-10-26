@@ -36,7 +36,10 @@ Twitux is a Twitter client for the Gnome desktop.
 
 %build
 %configure2_5x --disable-schemas-install
-%make
+# libsexy.pc sets libdir to ${exec_prefix}/lib. On x86_64 that pulls in the
+# 32-bit libc linker script and the link is rejected as elf32-i386.
+find . -name Makefile -print0 | xargs -0 sed -i -E 's#(^|[[:space:]])-L/usr/lib([[:space:]]|$)#\1\2#g'
+%make LIBTOOL=slibtool-shared
 
 %install
 %makeinstall_std
