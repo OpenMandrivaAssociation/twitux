@@ -53,7 +53,9 @@ find . -name Makefile -print0 | xargs -0 sed -i -E 's#(^|[[:space:]])-L/usr/lib(
 %make LIBTOOL=slibtool-shared
 
 %install
-%makeinstall_std
+# The link used slibtool, so src/twitux is a wrapper. The stock libtool
+# script executes it, and gtk_init exits when DISPLAY is unset.
+%makeinstall_std LIBTOOL=slibtool-shared
 
 %find_lang %{name} --with-gnome
 
