@@ -33,6 +33,17 @@ Twitux is a Twitter client for the Gnome desktop.
 %prep
 %setup -q
 %patch 0 -p0
+# msgfmt cannot convert ISO-8859-1. Recode the catalogs to UTF-8.
+python - << 'PY'
+from pathlib import Path
+for p in Path("po").glob("*.po"):
+    raw = p.read_bytes()
+    if b"ISO-8859-1" not in raw and b"iso-8859-1" not in raw:
+        continue
+    text = raw.decode("iso-8859-1")
+    text = text.replace("ISO-8859-1", "UTF-8").replace("iso-8859-1", "UTF-8")
+    p.write_bytes(text.encode("utf-8"))
+PY
 
 %build
 %configure2_5x --disable-schemas-install
